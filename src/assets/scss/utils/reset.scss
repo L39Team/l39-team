@@ -1,0 +1,32 @@
+
+/* Reset settings */
+html { width: 100vw; box-sizing: border-box; overflow-x: hidden; }
+
+*, *::before, *::after { box-sizing: inherit; }
+
+body,
+form, fieldset,
+ul, ol,
+h1, h2, h3, h4, h5, h6,
+p { margin: 0; padding: 0; }
+
+body { width: 100%; min-height: 100vh; }
+
+header, main, footer, article, section,
+form, fieldset { position: relative; width: 100%; }
+
+fieldset, textarea, input { border: none; font: inherit; appearance: none;
+  &:active, &:focus { outline: none; }
+}
+
+ul, ol { list-style: none; }
+
+a { text-decoration: none;
+  svg { fill: currentColor; }
+}
+
+img { max-width: 100%; height: auto; }
+
+blockquote, q { quotes: none;
+  &::before, &::after { content: ''; }
+}

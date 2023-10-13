@@ -1,0 +1,31 @@
+
+/* Pseudo */
+@mixin pseudo($content: '', $position: absolute, $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+}
+
+/* Subgrid */
+@mixin subgrid($start, $columns) {
+  grid-column-start: $start;
+  grid-column-end: span $columns;
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-gap: inherit;
+}
+
+/* Z-index */
+$layers: (
+  header: 3000,
+  main: 2000,
+  footer: 1000
+);
+
+@mixin z-index($index) {
+  @if map-has-key($layers, $index) {
+    z-index: map-get($layers, $index);
+  } @else {
+    @warn 'The key #{ $index } is not in the map `$layers`';
+  }
+}
