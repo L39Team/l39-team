@@ -27,7 +27,7 @@
     "type": "git",
     "url": "https://github.com/L39Team/l39-team"
   },
-  "author": "Ilya Lynd <ilya.lynd@gmail.com>",
+  "author": "L39 Team https://l39.team",
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
