@@ -1,32 +1,75 @@
 
-/* Reset settings */
-html { width: 100vw; box-sizing: border-box; overflow-x: hidden; }
+/* Box sizing rules */
+html { box-sizing: border-box;
+  *, *::before, *::after { box-sizing: inherit; }
+}
 
-*, *::before, *::after { box-sizing: inherit; }
+/* Set core html defaults */
+html { width: 100vw; overflow-x: hidden; }
 
+/* Prevent font size inflation */
+html { text-size-adjust: none; }
+
+/* Set body defaults */
+//! body { /* width: 100%; */ min-height: 100vh; }
+
+/* Remove default margin in favour of better control in authored CSS */
 body,
+h1, h2, h3, h4, h5, p,
 form, fieldset,
 ul, ol,
-h1, h2, h3, h4, h5, h6,
-p { margin: 0; padding: 0; }
+figure, blockquote, dl, dd { margin: 0; }
 
-body { width: 100%; min-height: 100vh; }
+/* Remove default padding */
+fieldset,
+ul, ol { padding: 0; }
 
-header, main, footer, article, section,
-form, fieldset { position: relative; width: 100%; }
+/* Position */
+//! body,
+header, footer, section,
+fieldset { position: relative; /* width: 100%; */ }
 
-fieldset, textarea, input { border: none; font: inherit; appearance: none;
+/* Set shorter line heights on headings and interactive elements */
+h1 { line-height: 1.1; }
+h2, h3, h4, h5 { line-height: 1.2; }
+p { line-height: 1.3; }
+label { line-height: 1; }
+
+/* Balance text wrapping on headings */
+h1, h2, h3, h4, h5 { text-wrap: balance; }
+
+/* Remove border from form elements */
+fieldset, textarea, input { border: none; }
+
+/* Inherit fonts for textarea and inputs */
+textarea, input { font: inherit; }
+
+/*  */
+textarea, input { appearance: none;
   &:active, &:focus { outline: none; }
 }
 
+/* Make sure textarea are not tiny and not resize */
+textarea { min-height: 10rem; resize: none; }
+
+/* Remove list styles on ul, ol elements, which suggests default styling will be removed */
 ul, ol { list-style: none; }
 
-a { text-decoration: none;
-  svg { fill: currentColor; }
-}
-
-img { max-width: 100%; height: auto; }
-
+/* Quotes rules */
 blockquote, q { quotes: none;
   &::before, &::after { content: ''; }
 }
+
+/* Set a elements defaults */
+a { text-decoration: none;
+  svg { stroke: currentColor; }
+}
+
+/* A elements that don't have a class get default styles */
+// article p a:not([class]) { color: currentColor; text-decoration: underline; text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+picture, img { max-width: 100%; /* height: auto; */ display: block; }
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target { scroll-margin-block: 5ex; }
